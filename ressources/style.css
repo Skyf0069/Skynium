@@ -146,6 +146,13 @@ nav > ul > li:hover > ul {
     transform: translateY(0);
 }
 
+#mobile-menu-icon {
+    display: none; /* Caché sur ordinateur */
+    font-size: 1.5rem; /* Taille de l'icône */
+    color: var(--primary);
+    cursor: pointer; /* Montre que c'est cliquable */
+    padding: 10px;
+}
 
 /* =================================================== */
 /* 4. CONTENU PRINCIPAL (ACCUEIL)                      */
@@ -218,4 +225,118 @@ footer a {
 /* Au survol, les liens deviennent roses */
 footer a:hover {
     color: var(--secondary);
+}
+
+/* =================================================== */
+/* 7. SECTION RESPONSIVE (LA NOUVELLE PARTIE)          */
+/* =================================================== */
+
+/* Ces styles s'appliquent SEULEMENT si la largeur de l'écran 
+  est de 768px OU MOINS (tablettes et mobiles).
+*/
+@media (max-width: 768px) {
+
+    /* --- Réglages du Header --- */
+    
+    header {
+        padding: 1rem 5%; /* Header moins haut */
+    }
+
+    header img {
+        height: 40px; /* Logo plus petit */
+    }
+
+    header p {
+        font-size: 1.5rem; /* Nom "Skynium" plus petit */
+    }
+
+    /* --- GESTION DU MENU HAMBURGER --- */
+
+    /* 1. On cache le menu de bureau */
+    nav > ul#main-nav {
+        display: none; 
+        
+        /* On le prépare à devenir le menu mobile */
+        position: absolute;
+        top: 100%; /* Se place sous le header */
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+        flex-direction: column; /* Les liens s'empileront verticalement */
+        width: 100%;
+    }
+
+    /* 2. On affiche le menu mobile quand il a la classe ".open" (gérée par JS) */
+    nav > ul#main-nav.open {
+        display: flex; 
+    }
+
+    /* 3. On ré-initialise les styles des liens pour le mobile */
+    nav > ul > li {
+        margin-left: 0; /* Plus de marge à gauche */
+    }
+
+    nav > ul > li > a {
+        display: block; /* Prend toute la largeur */
+        padding: 1.25rem; /* Plus facile à cliquer */
+        text-align: center;
+        border-bottom: 1px solid var(--bg-color);
+    }
+    
+    /* 4. On affiche l'icône hamburger (qui était cachée) */
+    #mobile-menu-icon {
+        display: block;
+    }
+
+    /* 5. On gère le sous-menu pour qu'il s'intègre */
+    nav ul li ul {
+        visibility: visible;
+        opacity: 1;
+        position: relative; /* Il n'est plus "flottant" */
+        transform: none;
+        box-shadow: none;
+        background-color: rgba(0,0,0, 0.03); /* Légère couleur de fond */
+        padding: 0;
+    }
+    
+    nav ul li ul li a {
+        padding-left: 3rem; /* On indente les sous-liens */
+        font-size: 0.9rem;
+    }
+    
+    nav > ul > li:hover > ul {
+        /* On désactive l'effet de survol sur mobile */
+        transform: none;
+    }
+
+
+    /* --- Réglages du Contenu --- */
+
+    main {
+        margin-top: 2rem;
+    }
+
+    main h1 {
+        font-size: 2.2rem; /* Titres plus petits */
+    }
+
+    main h2 {
+        font-size: 1.5rem;
+    }
+
+    /* --- Réglages du Footer --- */
+    
+    footer {
+        /* Le footer était déjà responsive, mais on peut 
+           forcer l'alignement à gauche pour plus de propreté */
+        justify-content: flex-start;
+        text-align: center; /* Centrer le texte dans chaque colonne */
+    }
+    
+    footer div {
+        /* Force chaque colonne à prendre 100% de la largeur */
+        min-width: 100%; 
+    }
+
 }
