@@ -340,3 +340,37 @@ footer a:hover {
     }
 
 }
+
+/* --- BOUTON CONNEXION HEADER (NOUVEAU) --- */
+
+.header-auth-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary) !important; /* Force le fond bleu */
+    color: var(--white) !important;
+    padding: 8px 20px !important;
+    border-radius: 50px !important; /* Pilule */
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    border: 2px solid transparent !important;
+    margin-left: 10px;
+}
+
+.header-auth-btn:hover {
+    background-color: var(--secondary) !important; /* Rose au survol */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* État connecté ("Bonjour") */
+.header-auth-btn.connected {
+    background-color: var(--white) !important;
+    color: var(--primary) !important;
+    border: 2px solid var(--primary) !important;
+}
+
+.header-auth-btn.connected:hover {
+    background-color: var(--primary) !important;
+    color: var(--white) !important;
+}
