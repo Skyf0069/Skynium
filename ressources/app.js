@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 2. Configuration (Même que le portail client)
     const auth0 = await createAuth0Client({
-        domain: "auth.skynium.fr",
+        domain: "skynium69.eu.auth0.com",
         clientId: "rPiPZ5QPi1z13hWXHIZzMAK7ED52HMQn", // <--- REMPLACE ICI
         authorizationParams: {
             redirect_uri: "https://my.skynium.fr" // On redirige toujours vers le portail
