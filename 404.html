@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skynium - Page non trouvée</title>
+
+    <!-- Liens CSS : Chemin mis à jour vers le dossier ressources -->
+    <link rel="stylesheet" href="/ressources/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- SDK Auth0 -->
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/ressources/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/ressources/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/ressources/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/ressources/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Skynium" />
+    <link rel="manifest" href="/ressources/favicon/site.webmanifest" />
+    
+    <style>
+        /* Style spécifique pour centrer le contenu de l'erreur */
+        .error-container {
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        .error-icon {
+            font-size: 5rem;
+            color: var(--tertiary); /* Orange pour l'alerte */
+            margin-bottom: 1.5rem;
+        }
+        .error-title {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+        .error-message {
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .redirect-message {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Standard -->
+    <header>
+        <div>
+            <!-- Note: J'ai ajouté un '/' devant les images pour être sûr qu'elles chargent même depuis une sous-page -->
+            <img src="/ressources/logo.png" alt="Logo de Skynium" width="100"> 
+            <p>Skynium</p>
+        </div>
+        <nav>
+            <ul id="main-nav">
+                <li><a href="assistance.html">Assistance</a></li>
+                <li><a href="temoignage.html">Témoignage</a></li>
+                
+                <li>
+                    <a href="#">Partenaires</a>
+                    <ul>
+                        <li><a href="https://abovetheskyproductions.skynium.fr">Above The Sky Productions</a></li>
+                        <li><a href="https://e-reservation.skynium.fr">Skynium E-Reservation</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="apropos.html">À propos</a></li>
+
+                <li>
+                    <a href="https://my.skynium.fr" id="header-auth-btn" class="header-auth-btn">
+                        <i class="fas fa-sign-in-alt"></i> Connexion
+                    </a>
+                </li>
+            </ul>
+
+            <i class="fa-solid fa-bars" id="mobile-menu-icon"></i>
+        </nav>
+    </header>
+
+    <!-- Contenu Principal -->
+    <main>
+        <div class="error-container">
+            <!-- Icône Nuage brisé / Alerte -->
+            <i class="fas fa-cloud-showers-heavy error-icon"></i>
+            
+            <h1 class="error-title">404</h1>
+            <h2>Oups ! Page introuvable.</h2>
+            
+            <p class="error-message">
+                Il semblerait que la page que vous cherchez se soit perdue dans les nuages.
+                L'adresse est peut-être incorrecte ou la page a été déplacée.
+            </p>
+
+            <!-- Message de redirection automatique -->
+            <p class="redirect-message">
+                Vous serez redirigé vers l'accueil dans <span id="countdown" style="font-weight: bold; color: var(--primary);">10</span> secondes...
+            </p>
+
+            <!-- Bouton de retour -->
+            <a href="/" class="portal-button portal-button-primary" style="display: inline-block; width: auto; text-decoration: none;">
+                <i class="fas fa-home"></i> Retour immédiat à l'accueil
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer Standard -->
+    <footer>
+         <div>
+            <h3>Nos réseaux</h3>
+            <ul>
+                <li>
+                    <a href="https://instagram.com/skynium">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                </li>
+                <li>
+                    <a href="https://facebook.com/SkyniumRECONECT">
+                        <i class="fa-brands fa-facebook"></i> Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/33667225452">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <p>
+                <a href="mailto:contact@skynium.fr">
+                    <i class="fa-solid fa-envelope"></i> contact@skynium.fr
+                </a>
+            </p>
+            <p>
+                <a href="tel:+33667225452">
+                    <i class="fa-solid fa-phone"></i> +33 6 67 22 54 52
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Note: '/' au début pour charger depuis la racine -->
+    <script src="/app.js"></script>
+    <script src="/auth-check.js"></script>
+
+    <!-- Script de redirection automatique -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let seconds = 10;
+            const el = document.getElementById('countdown');
+            
+            const interval = setInterval(() => {
+                seconds--;
+                if (el) el.innerText = seconds;
+                
+                if (seconds <= 0) {
+                    clearInterval(interval);
+                    window.location.href = "/";
+                }
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>
