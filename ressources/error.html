@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skynium - Page non trouvée</title>
+
+    <!-- Liens CSS (le même fichier style.css pour tout le site) -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- SDK Auth0 (pour que le bouton Connexion du header fonctionne) -->
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#1d0469"> 
+    <meta name="theme-color" content="#ffffff">
+    
+    <style>
+        /* Style spécifique pour centrer le contenu de l'erreur */
+        .error-container {
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        .error-icon {
+            font-size: 5rem;
+            color: var(--tertiary); /* Orange pour l'alerte */
+            margin-bottom: 1.5rem;
+        }
+        .error-title {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+        .error-message {
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Standard -->
+    <header>
+        <div>
+            <img src="logo.png" alt="Logo de Skynium" width="100"> 
+            <p>Skynium</p>
+        </div>
+        <nav>
+            <ul id="main-nav">
+                <li><a href="/assistance">Assistance</a></li>
+                <li><a href="/temoignages">Témoignage</a></li>
+                <li>
+                    <a href="/partenaires">Partenaires</a>
+                    <ul>
+                        <li><a href="/partenaires/ats-productions">Above The Sky Productions</a></li>
+                        <li><a href="/partenaires/skynium-e-reservation">Skynium E-Reservation</a></li>
+                    </ul>
+                </li>
+                <li><a href="/a-propos">A propos</a></li>
+                <!-- Bouton Connexion -->
+                <li>
+                    <a href="https://my.skynium.fr" id="header-auth-btn" class="header-auth-btn">
+                        <i class="fas fa-sign-in-alt"></i> Connexion
+                    </a>
+                </li>
+            </ul>
+            <i class="fa-solid fa-bars" id="mobile-menu-icon"></i>
+        </nav>
+    </header>
+
+    <!-- Contenu Principal -->
+    <main>
+        <div class="error-container">
+            <!-- Icône Nuage brisé / Alerte -->
+            <i class="fas fa-cloud-showers-heavy error-icon"></i>
+            
+            <h1 class="error-title">404</h1>
+            <h2>Oups ! Page introuvable.</h2>
+            
+            <p class="error-message">
+                Il semblerait que la page que vous cherchez se soit perdue dans les nuages.
+                L'adresse est peut-être incorrecte ou la page a été déplacée.
+            </p>
+
+            <!-- Bouton de retour -->
+            <a href="/" class="portal-button portal-button-primary" style="display: inline-block; width: auto; text-decoration: none;">
+                <i class="fas fa-home"></i> Retour à l'accueil
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer Standard -->
+    <footer>
+         <div>
+            <h3>Nos réseaux</h3>
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                <li><a href="#"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contact</h3>
+            <p><a href="mailto:contact@skynium.com"><i class="fa-solid fa-envelope"></i> contact@skynium.com</a></p>
+            <p><a href="tel:+33000000000"><i class="fa-solid fa-phone"></i> +33 0 00 00 00 00</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+    <script src="auth-check.js"></script>
+
+</body>
+</html>
