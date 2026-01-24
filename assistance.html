@@ -106,6 +106,7 @@
     <call-us-selector phonesystem-url="https://1187.3cx.cloud" party="skynium"></call-us-selector>
     
     <script>
+        // 1. Configuration et Chargement du Widget FreeScout
         var FreeScoutW = {
             s: {
                 "color": "#1d0469",
@@ -125,14 +126,43 @@
             m.parentNode.insertBefore(a, m)
         })(document, "script", "https://support.iris.skynium.fr/modules/chat/js/widget.js?v=3633");
 
-        // Fonction pour ouvrir le chat au clic du bouton
+        // 2. Fonction pour montrer le chat (Effet visuel)
         function toggleFreeScout() {
-            // Tente d'ouvrir le widget si l'API est chargée
-            if (typeof CW !== 'undefined' && typeof CW.open === 'function') {
-                CW.open();
-            } else {
-                alert("Le chat est en cours de chargement, veuillez patienter quelques secondes.");
-            }
+            // Création d'une flèche indicative temporaire
+            const arrow = document.createElement('div');
+            arrow.innerHTML = '↘️ Cliquez ici pour discuter';
+            
+            // Style de la flèche (Flottant en bas à droite)
+            Object.assign(arrow.style, {
+                position: 'fixed',
+                bottom: '100px', /* Juste au dessus de la bulle */
+                right: '20px',
+                backgroundColor: '#FA5DFF', /* Ton rose Skynium */
+                color: 'white',
+                padding: '10px 20px',
+                borderRadius: '50px',
+                boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
+                zIndex: '99999',
+                fontWeight: 'bold',
+                animation: 'bounce 1s infinite',
+                cursor: 'pointer'
+            });
+
+            // Animation CSS pour faire rebondir
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes bounce {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                }
+            `;
+            document.head.appendChild(style);
+
+            document.body.appendChild(arrow);
+
+            // On supprime la flèche après 5 secondes ou au clic
+            setTimeout(() => { if(arrow) arrow.remove(); }, 5000);
+            arrow.onclick = () => arrow.remove();
         }
     </script>
     
