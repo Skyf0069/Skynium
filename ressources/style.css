@@ -186,45 +186,57 @@ main p {
 /* =================================================== */
 
 footer {
-    background-color: var(--primary); /* Fond sombre */
+    background-color: var(--primary);
     color: var(--white);
     padding: 3rem 5%;
-    margin-top: 5rem;
-    
-    /* Sépare les sections "réseaux" et "contact" */
+    margin-top: auto; /* Pousse le footer en bas */
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur mobile */
-    gap: 2rem; /* Espace entre les colonnes */
+    justify-content: space-between; /* Espace entre les 3 colonnes */
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 footer div {
-    min-width: 250px; /* Largeur minimale pour chaque colonne */
+    min-width: 200px;
+    flex: 1; /* Les colonnes prennent la même largeur */
 }
 
 footer h3 {
-    font-size: 1.5rem;
-    color: var(--secondary); /* Titres en rose */
+    font-size: 1.25rem;
+    color: var(--secondary);
     margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 footer p {
     margin-bottom: 0.5rem;
+    font-size: 0.95rem;
 }
 
 footer ul li {
     margin-bottom: 0.5rem;
 }
 
-/* Liens du footer */
 footer a {
-    color: var(--white);
-    transition: color var(--transition-speed) ease;
+    color: #e0e0e0;
+    font-size: 0.95rem;
 }
 
-/* Au survol, les liens deviennent roses */
 footer a:hover {
     color: var(--secondary);
+    text-decoration: underline;
+}
+
+/* Copyright en bas du footer */
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.8rem;
+    color: #aaa;
 }
 
 /* =================================================== */
@@ -337,6 +349,11 @@ footer a:hover {
     footer div {
         /* Force chaque colonne à prendre 100% de la largeur */
         min-width: 100%; 
+    }
+
+    .legal-page h1 {
+        display: block;
+        border: none;
     }
 
 }
@@ -603,4 +620,35 @@ footer a:hover {
         order: -1; /* Force WhatsApp à être TOUT en haut sur mobile */
         padding: 25px; /* Plus gros sur mobile */
     }
+}
+
+/* =================================================== */
+/* 10. PAGES LÉGALES (Mentions, Politique)    */
+/* =================================================== */
+
+.legal-page h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 1rem;
+    display: inline-block;
+}
+
+.legal-page h2 {
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    color: var(--primary);
+    border-left: 4px solid var(--secondary);
+    padding-left: 1rem;
+}
+
+.legal-page p, .legal-page ul {
+    margin-bottom: 1rem;
+    color: #444;
+    text-align: justify;
+}
+
+.legal-page ul {
+    list-style: disc;
+    padding-left: 2rem;
 }
