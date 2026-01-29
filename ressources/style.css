@@ -185,20 +185,24 @@ main p {
 /* 6. PIED DE PAGE / FOOTER                            */
 /* =================================================== */
 
+/* =================================================== */
+/* CORRECTION FOOTER - LIENS VISIBLES + ALIGNEMENT    */
+/* =================================================== */
+
 footer {
     background-color: var(--primary);
     color: var(--white);
     padding: 3rem 5%;
-    margin-top: auto; /* Pousse le footer en bas */
+    margin-top: auto;
     display: flex;
-    justify-content: space-between; /* Espace entre les 3 colonnes */
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 2rem;
 }
 
 footer div {
     min-width: 200px;
-    flex: 1; /* Les colonnes prennent la même largeur */
+    flex: 1;
 }
 
 footer h3 {
@@ -212,19 +216,28 @@ footer h3 {
 footer p {
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
+    color: #e0e0e0; /* 👈 CORRECTION : texte visible */
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
 }
 
 footer ul li {
     margin-bottom: 0.5rem;
 }
 
+/* 👇 CORRECTION IMPORTANTE : Liens du footer en blanc clair */
 footer a {
-    color: #e0e0e0;
+    color: #e0e0e0 !important; /* Force la couleur blanche */
     font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: var(--secondary);
+    color: var(--secondary) !important; /* Rose au survol */
     text-decoration: underline;
 }
 
@@ -237,6 +250,18 @@ footer a:hover {
     border-top: 1px solid rgba(255,255,255,0.1);
     font-size: 0.8rem;
     color: #aaa;
+}
+
+/* Mobile : Les colonnes passent en vertical */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    footer div {
+        min-width: 100%;
+    }
 }
 
 /* =================================================== */
@@ -996,4 +1021,88 @@ body.big-cursor-light {
         bottom: 15px;
         left: 15px;
     }
+}
+
+/* =================================================== */
+/* MODES D'ACCESSIBILITÉ - EFFETS VISUELS             */
+/* =================================================== */
+
+/* Mode Monochrome (noir et blanc) */
+body.monochrome {
+    filter: grayscale(100%);
+}
+
+/* Haute saturation (couleurs vives) */
+body.high-saturation {
+    filter: saturate(200%);
+}
+
+/* Faible saturation (couleurs atténuées) */
+body.low-saturation {
+    filter: saturate(50%);
+}
+
+/* Mode épilepsie (atténue les couleurs) */
+body.epilepsy-safe {
+    filter: brightness(0.9) contrast(0.9);
+    animation: none !important; /* Supprime toutes les animations */
+}
+
+body.epilepsy-safe * {
+    animation: none !important;
+    transition: none !important;
+}
+
+/* Mode malvoyant (renforce visuellement) */
+body.visually-impaired {
+    filter: contrast(1.2) brightness(1.1);
+}
+
+body.visually-impaired * {
+    font-weight: 500 !important; /* Texte plus gras */
+}
+
+/* Mode TDAH (réduit les distractions) */
+body.adhd-friendly {
+    filter: saturate(80%);
+}
+
+body.adhd-friendly img,
+body.adhd-friendly video {
+    opacity: 0.7; /* Atténue les médias */
+}
+
+/* Mode handicap cognitif (simplifie) */
+body.cognitive-disability * {
+    font-family: Arial, sans-serif !important; /* Police simple */
+    line-height: 1.8 !important;
+}
+
+/* Surbrillance du curseur */
+body.highlight-cursor {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><circle cx="20" cy="20" r="18" fill="none" stroke="yellow" stroke-width="4"/></svg>') 20 20, auto;
+}
+
+/* Section "Modes actifs" dans le panneau */
+.accessibility-status {
+    background-color: rgba(29, 4, 105, 0.1); /* Fond bleu très léger */
+    border-left: 4px solid var(--secondary);
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.accessibility-status p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.accessibility-status strong {
+    color: var(--primary);
+}
+
+#active-modes-count {
+    color: var(--secondary-dark);
+    font-weight: bold;
 }
