@@ -97,8 +97,12 @@
     /**
      * Appliquer tous les paramètres au body
      */
+    /**
+     * Appliquer tous les paramètres au body
+     */
     function applySettings() {
         const body = document.body;
+        const html = document.documentElement; // ✅ AJOUT : On cible la racine HTML
         
         // === MODES BOOLÉENS (classes CSS) ===
         Object.keys(accessibilitySettings).forEach(key => {
@@ -111,8 +115,9 @@
             }
         });
 
-        // === TAILLE DE LA POLICE ===
-        body.style.fontSize = `${accessibilitySettings['font-size']}%`;
+        // === TAILLE DE LA POLICE (CORRECTION ICI) ===
+        // On applique sur le HTML pour que les unités 'rem' de tout le site changent
+        html.style.fontSize = `${accessibilitySettings['font-size']}%`;
 
         // === HAUTEUR DE LIGNE ===
         body.style.lineHeight = accessibilitySettings['line-height'];

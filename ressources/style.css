@@ -261,7 +261,6 @@ footer nav ul li a {
 footer nav ul li a:hover {
     background-color: transparent !important; /* Toujours pas de fond au survol */
     color: var(--secondary) !important;       /* Le texte devient rose */
-    transform: translateX(5px);               /* Petit décalage sympa vers la droite */
     box-shadow: none !important;              /* Enlève les ombres s'il y en a */
 }
 
@@ -1014,11 +1013,13 @@ body.highlight-headings h3 {
     color: #000;
 }
 
-/* Liens en surbrillance */
+/* Liens en surbrillance (Priorité absolue) */
 body.highlight-links a {
-    background-color: #FFFF99;
-    padding: 2px 5px;
-    border-radius: 3px;
+    background-color: #FFFF99 !important; /* Force le jaune par dessus le footer */
+    color: #000000 !important; /* Force le texte noir pour le contraste */
+    text-decoration: underline !important;
+    padding: 0 5px !important;
+    box-shadow: none !important; /* Enlève les ombres potentielles */
 }
 
 /* Grand curseur */
