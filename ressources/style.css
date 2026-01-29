@@ -652,3 +652,348 @@ footer a:hover {
     list-style: disc;
     padding-left: 2rem;
 }
+
+/* =================================================== */
+/* AJOUTS ACCESSIBILITÉ - À INTÉGRER DANS style.css   */
+/* =================================================== */
+
+/* 1. CLASSE SR-ONLY (Screen Reader Only) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Visible au focus (pour liens d'évitement) */
+.sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* 2. LIEN D'ÉVITEMENT "Aller au contenu principal" */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    z-index: 9999;
+    padding: 12px 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: 700;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 10px; /* Apparaît en haut à gauche au focus */
+}
+
+/* 3. FOCUS VISIBLE RENFORCÉ (ne jamais supprimer outline) */
+*:focus {
+    outline: 3px solid var(--tertiary); /* Orange bien visible */
+    outline-offset: 2px;
+}
+
+/* Focus spécifique pour les boutons */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid var(--tertiary);
+    outline-offset: 2px;
+}
+
+/* 4. CORRECTIONS DE CONTRASTE */
+/* Le rose #FA5DFF sur fond blanc = ratio 3.8:1 (insuffisant pour texte) */
+/* Solution : garder #FA5DFF pour les fonds, créer une variante foncée pour le texte */
+
+:root {
+    /* Couleurs originales (inchangées) */
+    --primary: #1D0469;
+    --secondary: #FA5DFF;
+    --tertiary: #FF8A3F;
+    
+    /* NOUVELLES VARIABLES pour contraste texte */
+    --secondary-dark: #D830E0; /* Rose plus foncé pour texte (ratio 4.52:1 ✅) */
+    --tertiary-dark: #E67A2E; /* Orange plus foncé si besoin */
+    
+    /* Couleurs neutres */
+    --bg-color: #FAFAFA;
+    --text-color: #333333;
+    --white: #FFFFFF;
+    
+    /* Variables de style */
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+    --container-width: 1200px;
+}
+
+/* Remplacer les usages de texte rose par la variante foncée */
+a {
+    color: var(--secondary-dark); /* Au lieu de var(--secondary) */
+}
+
+nav > ul > li > a:hover {
+    background-color: var(--secondary); /* Fond : garder le rose vif */
+    color: var(--white); /* Texte blanc = excellent contraste */
+}
+
+/* 5. BOUTON ACCESSIBILITÉ FIXE (en bas à gauche) */
+#accessibility-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10000;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#accessibility-button:hover,
+#accessibility-button:focus {
+    background-color: var(--secondary);
+    transform: scale(1.1);
+}
+
+/* 6. PANNEAU D'ACCESSIBILITÉ (à droite, caché par défaut) */
+#accessibility-panel {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Caché hors écran */
+    width: 400px;
+    height: 100vh;
+    background-color: var(--white);
+    box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+    z-index: 10001;
+    overflow-y: auto;
+    transition: right 0.4s ease;
+    padding: 20px;
+}
+
+#accessibility-panel.open {
+    right: 0; /* Glisse vers la gauche */
+}
+
+/* Bouton fermer le panneau */
+#accessibility-panel .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Titre du panneau */
+#accessibility-panel h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 0.5rem;
+}
+
+/* Sections du panneau */
+.accessibility-section {
+    margin-bottom: 2rem;
+}
+
+.accessibility-section h3 {
+    font-size: 1.1rem;
+    color: var(--secondary-dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Boutons d'options */
+.accessibility-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.accessibility-option:hover,
+.accessibility-option:focus {
+    border-color: var(--secondary);
+    background-color: #f0f0f0;
+}
+
+.accessibility-option.active {
+    border-color: var(--tertiary);
+    background-color: #fff4e6;
+}
+
+/* Toggle switch */
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.toggle-switch.active {
+    background-color: var(--secondary);
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.toggle-switch.active::after {
+    transform: translateX(26px);
+}
+
+/* Sliders (pour taille texte, espacement, etc.) */
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.slider-container input[type="range"] {
+    flex: 1;
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(to right, var(--secondary) 0%, var(--tertiary) 100%);
+    outline: none;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary);
+    cursor: pointer;
+}
+
+.slider-container span {
+    min-width: 40px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* 7. CLASSES MODES ACCESSIBILITÉ (appliquées au <body>) */
+
+/* Mode Malvoyant (contraste élevé) */
+body.high-contrast {
+    --primary: #000000;
+    --secondary-dark: #B800C7; /* Rose très foncé */
+    --tertiary-dark: #CC6600;
+    --bg-color: #FFFFFF;
+    --text-color: #000000;
+}
+
+body.high-contrast a,
+body.high-contrast button {
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+/* Mode Sombre */
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #FFFFFF;
+    --white: #2a2a2a;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #0a0a0a;
+}
+
+/* Mode Cécité (optimisé lecteur d'écran) */
+body.screen-reader-mode *:focus {
+    outline: 5px solid yellow !important;
+    outline-offset: 3px;
+}
+
+/* Police Dyslexie (OpenDyslexic via Google Fonts ou local) */
+body.dyslexia-font {
+    font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif;
+}
+
+/* Titres en surbrillance */
+body.highlight-headings h1,
+body.highlight-headings h2,
+body.highlight-headings h3 {
+    background-color: yellow;
+    padding: 5px;
+    color: #000;
+}
+
+/* Liens en surbrillance */
+body.highlight-links a {
+    background-color: #FFFF99;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* Grand curseur */
+body.big-cursor-dark,
+body.big-cursor-light {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><circle cx="20" cy="20" r="18" fill="black" stroke="white" stroke-width="2"/></svg>') 20 20, auto;
+}
+
+body.big-cursor-light {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><circle cx="20" cy="20" r="18" fill="white" stroke="black" stroke-width="2"/></svg>') 20 20, auto;
+}
+
+/* 8. RESPONSIVE (mobile) */
+@media (max-width: 768px) {
+    #accessibility-panel {
+        width: 100%;
+        right: -100%;
+    }
+    
+    #accessibility-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 15px;
+        left: 15px;
+    }
+}
