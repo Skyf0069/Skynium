@@ -185,10 +185,6 @@ main p {
 /* 6. PIED DE PAGE / FOOTER                            */
 /* =================================================== */
 
-/* =================================================== */
-/* CORRECTION FOOTER - LIENS VISIBLES + ALIGNEMENT    */
-/* =================================================== */
-
 footer {
     background-color: var(--primary);
     color: var(--white);
@@ -239,6 +235,34 @@ footer a {
 footer a:hover {
     color: var(--secondary) !important; /* Rose au survol */
     text-decoration: underline;
+}
+
+/* 1. On force l'affichage vertical (l'un sous l'autre) */
+footer nav ul {
+    display: flex !important;       /* Active Flexbox */
+    flex-direction: column !important; /* Force la direction verticale */
+    gap: 0.5rem !important;         /* Espace propre entre chaque réseau */
+    margin: 0 !important;           /* Enlève les marges héritées */
+}
+
+/* 2. On réinitialise les liens pour enlever le style "bouton" du header */
+footer nav ul li a {
+    background-color: transparent !important; /* 🛑 SUPPRIME LE FOND ROSE */
+    padding: 0 !important;          /* Enlève le gros rembourrage du header */
+    border-radius: 0 !important;    /* Enlève les bords ronds du header */
+    display: inline-flex !important; /* Aligne parfaitement l'icône et le texte */
+    align-items: center;            /* Centre verticalement l'icône */
+    gap: 10px;                      /* Espace entre l'icône et le texte "Instagram" */
+    width: auto !important;
+    height: auto !important;
+}
+
+/* 3. On définit un survol propre (juste le texte qui change de couleur) */
+footer nav ul li a:hover {
+    background-color: transparent !important; /* Toujours pas de fond au survol */
+    color: var(--secondary) !important;       /* Le texte devient rose */
+    transform: translateX(5px);               /* Petit décalage sympa vers la droite */
+    box-shadow: none !important;              /* Enlève les ombres s'il y en a */
 }
 
 /* Copyright en bas du footer */
