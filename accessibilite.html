@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skynium - Accueil</title>
+    <title>Skynium - Déclaration d'accessibilité</title>
 
     <link rel="stylesheet" href="ressources/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Police Dyslexie (OpenDyslexic) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=OpenDyslexic&display=swap" rel="stylesheet">
     
@@ -18,18 +17,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/ressources/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Skynium" />
     <link rel="manifest" href="/ressources/favicon/site.webmanifest" />
-
 </head>
 <body>
 
-    <!-- ============================================ -->
-    <!-- LIEN D'ÉVITEMENT (visible au focus clavier)  -->
-    <!-- ============================================ -->
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
-    <!-- ============================================ -->
-    <!-- BOUTON ACCESSIBILITÉ FIXE                    -->
-    <!-- ============================================ -->
     <button 
         id="accessibility-button" 
         aria-label="Ouvrir le panneau d'accessibilité"
@@ -39,9 +31,6 @@
         <i class="fas fa-universal-access" aria-hidden="true"></i>
     </button>
 
-    <!-- ============================================ -->
-    <!-- PANNEAU D'ACCESSIBILITÉ (latéral droit)      -->
-    <!-- ============================================ -->
     <aside 
         id="accessibility-panel" 
         class="accessibility-panel"
@@ -107,11 +96,9 @@
             </div>
         </section>
 
-        <!-- SECTION 2 : Expérience lisible -->
         <section class="accessibility-section">
             <h3>Expérience lisible</h3>
 
-            <!-- Taille de la police -->
             <div class="slider-option">
                 <label for="font-size-slider">Taille de la police</label>
                 <div class="slider-container">
@@ -131,7 +118,6 @@
                 </div>
             </div>
 
-            <!-- Hauteur de ligne -->
             <div class="slider-option">
                 <label for="line-height-slider">Hauteur de ligne</label>
                 <div class="slider-container">
@@ -148,7 +134,6 @@
                 </div>
             </div>
 
-            <!-- Espacement des lettres -->
             <div class="slider-option">
                 <label for="letter-spacing-slider">Espacement des lettres</label>
                 <div class="slider-container">
@@ -165,7 +150,6 @@
                 </div>
             </div>
 
-            <!-- Police Dyslexie -->
             <div class="accessibility-option" data-mode="dyslexia-font" role="switch" aria-checked="false" tabindex="0">
                 <div>
                     <strong>Police adaptée à la dyslexie</strong>
@@ -173,7 +157,6 @@
                 <div class="toggle-switch" aria-hidden="true"></div>
             </div>
 
-            <!-- Titres en surbrillance -->
             <div class="accessibility-option" data-mode="highlight-headings" role="switch" aria-checked="false" tabindex="0">
                 <div>
                     <strong>Titres en surbrillance</strong>
@@ -181,7 +164,6 @@
                 <div class="toggle-switch" aria-hidden="true"></div>
             </div>
 
-            <!-- Liens en surbrillance -->
             <div class="accessibility-option" data-mode="highlight-links" role="switch" aria-checked="false" tabindex="0">
                 <div>
                     <strong>Liens en surbrillance</strong>
@@ -189,7 +171,6 @@
                 <div class="toggle-switch" aria-hidden="true"></div>
             </div>
 
-            <!-- Alignement du texte -->
             <div class="text-align-options">
                 <label>Alignement du texte</label>
                 <div class="button-group" role="radiogroup" aria-label="Alignement du texte">
@@ -224,11 +205,9 @@
             </div>
         </section>
 
-        <!-- SECTION 3 : Expérience visuellement agréable -->
         <section class="accessibility-section">
             <h3>Expérience visuellement agréable</h3>
 
-            <!-- Contraste -->
             <div class="button-group" role="radiogroup" aria-label="Mode de contraste">
                 <button 
                     class="contrast-btn active" 
@@ -268,7 +247,6 @@
                 </button>
             </div>
 
-            <!-- Saturation -->
             <div class="accessibility-option" data-mode="high-saturation" role="switch" aria-checked="false" tabindex="0">
                 <div>
                     <strong>Haute saturation</strong>
@@ -291,7 +269,6 @@
             </div>
         </section>
 
-        <!-- SECTION 4 : Orientation facile -->
         <section class="accessibility-section">
             <h3>Orientation facile</h3>
 
@@ -317,20 +294,16 @@
             </div>
         </section>
 
-        <!-- BOUTON RÉINITIALISER -->
         <button id="reset-accessibility-btn" class="reset-btn">
             <i class="fas fa-undo" aria-hidden="true"></i> Réinitialiser tous les paramètres
         </button>
 
     </aside>
 
-    <!-- ============================================ -->
-    <!-- HEADER                                       -->
-    <!-- ============================================ -->
     <header role="banner">
         <div>
             <img src="ressources/logo.png" alt="Skynium - Retour à l'accueil"> 
-            <a href="index.html"><p>SKYNIUM</p></a>
+            <a href="index.html"><p>Skynium</p></a>
         </div>
 
         <nav role="navigation" aria-label="Navigation principale">
@@ -354,42 +327,93 @@
                 aria-label="Ouvrir le menu de navigation"
                 aria-expanded="false"
                 aria-controls="main-nav"
+                style="background:none; border:none; color:inherit; font-size:1.5rem; cursor:pointer;"
             >
                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
             </button>
         </nav>
     </header>
 
-    <!-- ============================================ -->
-    <!-- CONTENU PRINCIPAL                            -->
-    <!-- ============================================ -->
     <main id="main-content" role="main">
-        <section id="accueil-hero">
-            <h1>Bienvenue chez Skynium</h1>
-            <h2>La technologie est notre avenir, utilisons-la avec soin.</h2>
+        <section class="legal-page">
+            <h1>Déclaration d'accessibilité</h1>
+            
             <p>
-                Vous avez un problème avec votre ordinateur ? Il est trop lent ?
-                Vous avez un problème avec votre Wi-Fi ?
-                Vous avez un problème sur votre téléphone ?
-                Vous souhaitez apprendre à utiliser votre téléphone ou ordinateur ?
-                Vous souhaitez acheter ou changer de forfait Internet ou Mobile ?
+                <strong>Skynium</strong> s’engage à rendre ses sites internet, intranet, extranet et ses progiciels accessibles (et ses applications mobiles et mobilier urbain numérique) conformément à l’article 47 de la loi n°2005-102 du 11 février 2005.
             </p>
+            
             <p>
-                Ou pour d'autres questions, vous êtes la bienvenue chez Skynium ! Nous vous rassurons, nos prix sont très bas 😁
+                Cette déclaration d’accessibilité s’applique au site <strong>www.skynium.fr</strong> et à ses sous-domaines associés.
             </p>
+
+            <h2>État de conformité</h2>
             <p>
-                Pour assurer une meilleure discussion, nous vous conseillons de nous contacter par WhatsApp au numéro <a href="https://wa.me/33667225452">06 67 22 54 52</a>.
+                Le site <strong>Skynium</strong> est en conformité partielle avec le référentiel général d’amélioration de l’accessibilité (RGAA), version 4.1.
             </p>
+
+            <h2>Fonctionnalités et Assistance dédiée</h2>
             <p>
-                Nous ferons de notre mieux pour vous répondre dans les plus brefs délais et vous assister.
-                Consultez ce que fera Skynium dans les années à venir avec notre plan stratégique <a href="horizon2027.html">Horizon 2027</a>.
+                Dans une démarche d'inclusion totale, Skynium a déployé un <strong>Module d'Accessibilité Universel</strong> permettant à chaque utilisateur de personnaliser son expérience de navigation selon ses besoins spécifiques.
             </p>
+            
+            <h3>Profils d'accessibilité disponibles :</h3>
+            <ul>
+                <li><strong>Mode Sécurité Épilepsie :</strong> Élimine les risques de crises en désactivant les animations clignotantes et en ajustant les couleurs.</li>
+                <li><strong>Mode Malvoyant :</strong> Améliore les visuels et renforce les contrastes pour une meilleure perception.</li>
+                <li><strong>Mode Handicap Cognitif :</strong> Aide à la concentration en focalisant l'attention sur les éléments essentiels.</li>
+                <li><strong>Mode adapté au TDAH :</strong> Réduit les distractions visuelles pour faciliter la lecture.</li>
+                <li><strong>Mode Cécité (Lecteur d'écran) :</strong> Optimise le site pour être compatible avec les logiciels de synthèse vocale (JAWS, NVDA, VoiceOver).</li>
+            </ul>
+
+            <h3>Ajustements de lecture et visuels :</h3>
+            <ul>
+                <li><strong>Police adaptée :</strong> Intégration de la typographie <em>OpenDyslexic</em> pour les utilisateurs dyslexiques.</li>
+                <li><strong>Lisibilité :</strong> Ajustement personnalisé de la taille du texte, de la hauteur de ligne et de l'espacement des lettres.</li>
+                <li><strong>Guides visuels :</strong> Mise en surbrillance des titres, des liens et curseur agrandi (clair ou sombre).</li>
+                <li><strong>Contrastes et Couleurs :</strong> Modes Sombre, Clair, Monochrome, Haute et Basse saturation.</li>
+            </ul>
+
+            <h2>Technologies utilisées</h2>
+            <p>
+                L'accessibilité de Skynium s'appuie sur les technologies suivantes :
+            </p>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>WAI-ARIA (Rich Internet Applications)</li>
+            </ul>
+
+            <h2>Retour d'information et contact</h2>
+            <p>
+                Si vous n’arrivez pas à accéder à un contenu ou à un service, vous pouvez contacter le responsable du site internet pour être orienté vers une alternative accessible ou obtenir le contenu sous une autre forme.
+            </p>
+            <ul>
+                <li><strong>Par email :</strong> <a href="mailto:contact@skynium.fr">contact@skynium.fr</a></li>
+                <li><strong>Par téléphone :</strong> +33 6 67 22 54 52</li>
+                <li><strong>Par WhatsApp :</strong> <a href="https://wa.me/33667225452">Contact rapide via WhatsApp</a></li>
+            </ul>
+
+            <h2>Voies de recours</h2>
+            <p>
+                Cette procédure est à utiliser dans le cas suivant : vous avez signalé au responsable du site internet un défaut d’accessibilité qui vous empêche d’accéder à un contenu ou à un des services du portail et vous n’avez pas obtenu de réponse satisfaisante.
+            </p>
+            <ul>
+                <li>Écrire un message au <a href="https://formulaire.defenseurdesdroits.fr/" target="_blank">Défenseur des droits</a>.</li>
+                <li>Contacter le délégué du <a href="https://www.defenseurdesdroits.fr/saisir/delegues" target="_blank">Défenseur des droits dans votre région</a>.</li>
+                <li>Envoyer un courrier par la poste (gratuit, sans affranchissement) à :<br>
+                    <strong>Défenseur des droits</strong><br>
+                    Libre réponse 71120<br>
+                    75342 Paris CEDEX 07
+                </li>
+            </ul>
+            
+            <div style="margin-top: 3rem; font-size: 0.9em; color: #666;">
+                <p><em>Date de la déclaration : 30 Janvier 2026</em></p>
+            </div>
         </section>
     </main>
 
-    <!-- ============================================ -->
-    <!-- FOOTER                                       -->
-    <!-- ============================================ -->
     <footer role="contentinfo">
         <div>
             <h3>Nos réseaux</h3>
@@ -407,7 +431,7 @@
                 <ul>
                     <li><a href="mentionslegales.html">Mentions Légales</a></li>
                     <li><a href="politiqueconfidentialite.html">Politique de Confidentialité</a></li>
-                    <li><a href="accessibilite.html">Déclaration d'Accessibilité</a></li>
+                    <li><a href="accessibilite.html">DÉCLARATION D'ACCESSIBILITÉ</a></li>
                     <li><a href="horizon2027.html">Horizon 2027</a></li>
                 </ul>
             </nav>
@@ -424,6 +448,7 @@
 
     <call-us-selector phonesystem-url="https://1187.3cx.cloud" party="skynium"></call-us-selector>
     <script>var FreeScoutW={s:{"color":"#1d0469","position":"br","locale":"fr","id":1368009202}};(function(d,e,s){if(d.getElementById("freescout-w"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="freescout-w";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","https://support.iris.skynium.fr/modules/enduserportal/js/widget.js?v=3521");</script>
+    
     <script src="ressources/accessibility.js"></script>
     <script src="ressources/app.js"></script>
 
