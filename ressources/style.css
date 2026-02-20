@@ -1131,3 +1131,135 @@ body.highlight-cursor {
     color: var(--secondary-dark);
     font-weight: bold;
 }
+
+/* =================================================== */
+/* 10. PAGE TÉMOIGNAGES                                */
+/* =================================================== */
+
+.testimonials-hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.testimonials-hero h1 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.testimonials-hero p {
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Grille des avis */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding-bottom: 4rem;
+}
+
+/* Carte individuelle */
+.testimonial-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-speed) ease;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary);
+}
+
+/* En-tête de la carte */
+.testimonial-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--bg-color);
+}
+
+.testimonial-info h3 {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin: 0 0 0.2rem 0;
+}
+
+.testimonial-info .role {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+
+/* --- BADGES DE SERVICES (NOUVEAU) --- */
+.service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.service-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Couleurs spécifiques aux marques */
+.service-badge.skynium {
+    background-color: rgba(29, 4, 105, 0.1); /* Bleu clair */
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.service-badge.ats {
+    background-color: rgba(255, 138, 63, 0.1); /* Orange clair */
+    color: var(--tertiary);
+    border: 1px solid var(--tertiary);
+}
+
+/* Étoiles, texte et date */
+.stars {
+    color: #FFC107;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #444;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.testimonial-date {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #aaa;
+    text-align: right;
+}
