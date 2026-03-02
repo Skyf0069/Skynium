@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skynium - Témoignage</title>
+    <title>Skynium - Plan du site</title>
 
     <link rel="stylesheet" href="ressources/style.css">
     <link rel="stylesheet" href="/ressources/fontawesome/css/all.min.css">
@@ -14,7 +14,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/ressources/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Skynium" />
     <link rel="manifest" href="/ressources/favicon/site.webmanifest" />
-
 </head>
 <body>
 
@@ -187,19 +186,22 @@
         </button>
     </aside>
 
-    <header>
+    <!-- ============================================ -->
+    <!-- HEADER                                       -->
+    <!-- ============================================ -->
+    <header role="banner">
         <div>
-            <img src="ressources/logo.png" alt="Logo de Skynium"> 
+            <img src="ressources/logo.png" alt="Skynium - Retour à l'accueil"> 
             <a href="index.html"><p>Skynium</p></a>
         </div>
 
-        <nav>
+        <nav role="navigation" aria-label="Navigation principale">
             <ul id="main-nav">
                 <li><a href="assistance.html">Assistance</a></li>
-                <li><a href="temoignage.html">TÉMOIGNAGE</a></li>
+                <li><a href="temoignage.html">Témoignage</a></li>
                 
                 <li>
-                    <a href="#">Partenaires</a>
+                    <a href="#" aria-haspopup="true" aria-expanded="false">Partenaires</a>
                     <ul>
                         <li><a href="https://abovethesky.skynium.fr">Above The Sky</a></li>
                         <li><a href="https://e-reservation.skynium.fr">Skynium E-Reservation</a></li>
@@ -209,168 +211,57 @@
                 <li><a href="apropos.html">À propos</a></li>
             </ul>
 
-            <i class="fa-solid fa-bars" id="mobile-menu-icon"></i>
+            <button 
+                id="mobile-menu-icon" 
+                aria-label="Ouvrir le menu de navigation"
+                aria-expanded="false"
+                aria-controls="main-nav"
+                style="background:none; border:none; color:inherit; font-size:1.5rem; cursor:pointer;"
+            >
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
         </nav>
     </header>
 
+    <!-- ============================================ -->
+    <!-- CONTENU PRINCIPAL                            -->
+    <!-- ============================================ -->
     <main id="main-content" role="main">
-        
-        <section class="testimonials-hero">
-            <h1>Ils nous font confiance</h1>
-            <p>Découvrez les retours d'expérience de nos clients et partenaires qui utilisent l'écosystème Skynium.</p>
+        <section class="legal-page">
+            <h1>Plan du site</h1>
             
-            <a href="https://tally.so/r/vGAEAv" target="_blank" class="portal-button portal-button-primary">
-                <i class="fas fa-pen-nib"></i> Laisser un avis
-            </a>
+            <p>Retrouvez ci-dessous l'arborescence complète du site internet Skynium et de ses services associés.</p>
+
+            <h2>Pages principales</h2>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="assistance.html">Assistance</a></li>
+                <li><a href="temoignage.html">Témoignages clients</a></li>
+                <li><a href="apropos.html">À propos de Skynium</a></li>
+                <li><a href="horizon2027.html">Horizon 2027 (Notre vision)</a></li>
+            </ul>
+
+            <h2>Écosystème & Partenaires</h2>
+            <ul>
+                <li><a href="https://abovethesky.skynium.fr">Above The Sky (Pôle créatif et événementiel)</a></li>
+                <li><a href="https://e-reservation.skynium.fr">Skynium E-Reservation</a></li>
+            </ul>
+
+            <h2>Informations légales et conformité</h2>
+            <ul>
+                <li><a href="mentionslegales.html">Mentions Légales</a></li>
+                <li><a href="politiqueconfidentialite.html">Politique de Confidentialité</a></li>
+                <li><a href="accessibilite.html">Déclaration d'Accessibilité</a></li>
+                <li><a href="souverainete.html">Souveraineté Numérique</a></li>
+                <li><a href="https://privacy.skynium.fr">Centre de Confidentialité (Gestion des données)</a></li>
+                <li><a href="plan-du-site.html">Plan du site</a></li>
+            </ul>
         </section>
-
-        <section class="testimonials-grid">
-            
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <img src="https://placehold.co/60x60/1D0469/ffffff?text=MF" alt="M Fiouane">
-                    <div class="testimonial-info">
-                        <h3>M. FIOUANE</h3>
-                        <span class="role">Professeur d'Anglais</span>
-                        <div class="service-tags">
-                            <span class="service-badge skynium">Skynium</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    "Skynium est une entreprise formidable, le directeur de l'entreprise m'aidait beaucoup pendant mes cours. Il m'a aussi aidé à faire un projet sur le harcèlement. Je lui en remercie chaleureusement"
-                </p>
-                <span class="testimonial-date">19 octobre 2023</span>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <img src="https://placehold.co/60x60/1D0469/ffffff?text=CV" alt="C Valliccioni">
-                    <div class="testimonial-info">
-                        <h3>C. VALLICCIONI</h3>
-                        <span class="role">Pharmacienne retraitée</span>
-                        <div class="service-tags">
-                            <span class="service-badge skynium">Skynium</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    "Nous le sollicitons souvent. Il est très compétant et efficace. Nous le recommandons"
-                </p>
-                <span class="testimonial-date">20 juin 2025</span>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <img src="https://placehold.co/60x60/1D0469/ffffff?text=BB" alt="B Balbas">
-                    <div class="testimonial-info">
-                        <h3>B. BALBAS</h3>
-                        <span class="role">Chauffeur de bus retraité</span>
-                        <div class="service-tags">
-                            <span class="service-badge skynium">Skynium</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    "Je le recommande mille fois il est vraiment très fort pour son âge."
-                </p>
-                <span class="testimonial-date">26 juin 2025</span>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <img src="https://placehold.co/60x60/1D0469/ffffff?text=CT" alt="C Teissier">
-                    <div class="testimonial-info">
-                        <h3>C. TEISSIER</h3>
-                        <span class="role">Assistante maternelle</span>
-                        <div class="service-tags">
-                            <span class="service-badge skynium">Skynium</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    "Jonathan est un jeune homme sérieux, serviable, compétent et efficace. Il a su me venir en aide pour regler des problèmes sur mon pc ne me permettant pas de l'utiliser correctement ainsi que faire des réglages . Il a pu également intervenir sur mon téléphone afin de me faciliter son utilisation et également me montrer les capacités possibles de celui-ci. Je le recommande vivement 😁"
-                </p>
-                <span class="testimonial-date">3 juillet 2025</span>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <img src="https://placehold.co/60x60/1D0469/ffffff?text=AI" alt="A Ienco">
-                    <div class="testimonial-info">
-                        <h3>A. IENCO</h3>
-                        <span class="role">Directrice d'une école de danse</span>
-                        <div class="service-tags">
-                            <span class="service-badge skynium">Skynium</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    "Je remercie Jonathan qui est, à chaque fois, d'une grande aide concernant la technologie. Souvent en difficulté avec mon téléphone et mon ordinateur, il règle tous les problèmes en quelques minutes ! Merci beaucoup à ce jeune homme plein de talent, sérieux et très serviable ! Un bel avenir l'attend !"
-                </p>
-                <span class="testimonial-date">8 juillet 2025</span>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <img src="https://www.atmosart.fr/wp-content/uploads/2023/02/logo-sans-fond-sans-ombre.png" alt="ATMOS ART">
-                    <div class="testimonial-info">
-                        <h3>ATMOS ART</h3>
-                        <span class="role">École de danse</span>
-                        <div class="service-tags">
-                            <span class="service-badge skynium">Skynium E-Reservation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    "Jonathan, bravo et merci ! Ayant une école de danse il m'aide à créer des e-invitations, à créer des événements, à corriger des erreurs technologiques, à créer des QR codes. Ce jeune est un génie ! Merci beaucoup !"
-                </p>
-                <span class="testimonial-date">17 juillet 2025</span>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <img src="https://placehold.co/60x60/FA5DFF/ffffff?text=AL" alt="A Lahmar">
-                    <div class="testimonial-info">
-                        <h3>A. LAHMAR</h3>
-                        <span class="role">Prothésiste ongulaire et Manageuse d'événements</span>
-                        <div class="service-tags">
-                            <span class="service-badge skynium">Skynium</span>
-                            <span class="service-badge ats">Above The Sky</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    "Excellent travail, Jonathan est à l'écoute, très calme surtout pour les personnes en difficultés. Merci de m'avoir aidé pour mon projet, hâte de vous recontacter pour de nouvelles aventures. Recommande fortement !"
-                </p>
-                <span class="testimonial-date">8 août 2025</span>
-            </div>
-
-        </section>
-
     </main>
 
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
     <footer role="contentinfo">
         <div>
             <h3>Nos réseaux</h3>
@@ -389,8 +280,10 @@
                     <li><a href="mentionslegales.html">Mentions Légales</a></li>
                     <li><a href="politiqueconfidentialite.html">Politique de Confidentialité</a></li>
                     <li><a href="accessibilite.html">Déclaration d'Accessibilité</a></li>
+                    <li><a href="souverainete.html">Souveraineté Numérique</a></li>
+                    <li><a href="https://privacy.skynium.fr">Centre de Confidentialité</a></li>
+                    <li><a href="plan-du-site.html">PLAN DU SITE</a></li>
                     <li><a href="horizon2027.html">Horizon 2027</a></li>
-                    <li><a href="plan-du-site.html">Plan du site</a></li>
                 </ul>
             </nav>
         </div>
@@ -404,6 +297,7 @@
         </div>
     </footer>
 
+    <!-- Scripts de base (uniquement pour le fonctionnement du menu mobile et du chat) -->
     <call-us-selector phonesystem-url="https://1187.3cx.cloud" party="skynium"></call-us-selector>
     <script>var FreeScoutW={s:{"color":"#1d0469","position":"br","locale":"fr","require":["name","email","phone"],"id":1681224262}};(function(d,e,s){if(d.getElementById("freescout-w"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="freescout-w";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","https://support.iris.skynium.fr/modules/chat/js/widget.js?v=2503");</script>
     <script src="ressources/skynium-data.js"></script>
