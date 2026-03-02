@@ -1,7 +1,6 @@
 /**
  * SKYNIUM DATA - Consent Management Platform
- * Ce script génère le bandeau de cookies sur tout l'écosystème (*.skynium.fr)
- * Il lit et écrit le cookie partagé pour ne pas redemander le consentement.
+ * Conforme aux mentions légales Skynium et lié à privacy.skynium.fr
  */
 
 (function() {
@@ -92,6 +91,9 @@
                 line-height: 1.5;
                 margin: 0;
             }
+            .sk-data-text strong {
+                color: ${skyniumDataConfig.primary};
+            }
             .sk-data-buttons {
                 display: flex;
                 gap: 10px;
@@ -127,7 +129,7 @@
         `;
         document.head.appendChild(style);
 
-        // Injection du HTML
+        // Injection du HTML (Texte mis à jour selon tes mentions légales)
         const bannerHTML = `
             <div id="sk-data-banner" role="dialog" aria-labelledby="sk-cookie-title" aria-describedby="sk-cookie-desc">
                 <div class="sk-data-container">
@@ -137,13 +139,15 @@
                             Skynium DATA
                         </div>
                         <p class="sk-data-text" id="sk-cookie-desc">
-                            Pour vous offrir la meilleure expérience sur l'écosystème Skynium (et nos marques partenaires comme Above The Sky), 
-                            nous utilisons des cookies. Ils nous permettent de sécuriser votre connexion, d'analyser le trafic et d'optimiser nos services.
+                            Conformément à notre politique de confidentialité, l'écosystème Skynium utilise des cookies <strong>strictement nécessaires</strong> 
+                            pour mémoriser vos informations de contact et suivre la navigation technique (navigateur, pays, adresse IP). Ces cookies obligatoires 
+                            ne requièrent pas de consentement. Nous proposons également des cookies optionnels pour améliorer nos services.
                         </p>
                     </div>
                     <div class="sk-data-buttons">
-                        <button id="sk-data-refuse" class="sk-btn sk-btn-refuse">Refuser</button>
-                        <!-- Le lien pointe vers le centre de confidentialité que tu viens de créer -->
+                        <!-- CNIL : Le bouton refus doit être aussi lisible que l'acceptation -->
+                        <button id="sk-data-refuse" class="sk-btn sk-btn-refuse">Continuer sans accepter</button>
+                        <!-- Lien vers le centre de confidentialité -->
                         <a href="https://privacy.skynium.fr" class="sk-btn sk-btn-manage">Gérer mes choix</a>
                         <button id="sk-data-accept" class="sk-btn sk-btn-accept">Tout accepter</button>
                     </div>
@@ -165,14 +169,11 @@
         });
     }
 
-    // 5. Fonction qui charge les scripts Google Analytics, Facebook, etc. (Seulement si accepté)
+    // 5. Fonction qui charge les scripts non-obligatoires (Seulement si accepté)
     function triggerTrackingScripts() {
-        console.log("✅ [Skynium DATA] Consentement actif. Les scripts d'analyse sont chargés.");
-        // C'est ici que tu colleras tes futurs codes Google Analytics, Matomo, etc.
-        // Exemple :
-        // const script = document.createElement('script');
-        // script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXX";
-        // document.head.appendChild(script);
+        console.log("✅ [Skynium DATA] Consentement actif. Les scripts optionnels sont chargés.");
+        // Les outils obligatoires (Tally, FreeScout) fonctionnent déjà sans ce script.
+        // C'est ici que tu mettras les futurs scripts analytiques (ex: Google Analytics) si tu en ajoutes.
     }
 
 })();
