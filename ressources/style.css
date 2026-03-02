@@ -999,7 +999,22 @@ body.screen-reader-mode *:focus {
     outline-offset: 3px;
 }
 
-/* Police Dyslexie (OpenDyslexic via Google Fonts ou local) */
+/* Police Dyslexie */
+/* =================================================== */
+/* 1. IMPORTATION DE LA POLICE LOCALE                  */
+/* =================================================== */
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('/ressources/fonts/OpenDyslexic-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+/* =================================================== */
+/* 2. APPLICATION DE LA POLICE (Ton code actuel)       */
+/* =================================================== */
+/* Police Dyslexie (OpenDyslexic en local) */
 body.dyslexia-font {
     font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif;
 }

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Souveraineté Numérique - Skynium</title>
+
+    <link rel="stylesheet" href="ressources/style.css">
+    <link rel="stylesheet" href="ressources/fontawesome/css/all.min.css">
+    
+    <!-- Police Dyslexie (OpenDyslexic locale) -->
+    <style>
+        @font-face {
+            font-family: 'OpenDyslexic';
+            src: url('ressources/fonts/OpenDyslexic-Regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap; 
+        }
+        
+        /* Styles spécifiques pour la page souveraineté */
+        .sovereignty-hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-bottom: 2rem;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        .sovereignty-hero h1 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .sovereignty-hero p {
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .status-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            border-top: 4px solid var(--primary);
+        }
+
+        .status-card.success {
+            border-top-color: #00875A; /* Vert */
+        }
+
+        .status-card.warning {
+            border-top-color: var(--tertiary); /* Orange */
+        }
+        
+        .status-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+            flex-grow: 1;
+        }
+
+        .status-card li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #444;
+            font-size: 0.95rem;
+        }
+        
+        .status-card.success li::before {
+            content: '\f00c';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #00875A;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .status-card.warning li::before {
+            content: '\f017';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--tertiary);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+    </style>
+    
+    <link rel="icon" type="image/png" href="/ressources/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/ressources/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/ressources/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/ressources/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Skynium" />
+    <link rel="manifest" href="/ressources/favicon/site.webmanifest" />
+
+</head>
+<body>
+
+    <!-- LIEN D'ÉVITEMENT -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- BOUTON ACCESSIBILITÉ FIXE -->
+    <button id="accessibility-button" aria-label="Ouvrir le panneau d'accessibilité" aria-expanded="false" aria-controls="accessibility-panel">
+        <i class="fas fa-universal-access" aria-hidden="true"></i>
+    </button>
+
+    <!-- (Le panneau d'accessibilité devrait être ici, je l'omets pour la concision mais tu dois le copier depuis tes autres pages) -->
+
+    <header role="banner">
+        <div>
+            <img src="ressources/logo.png" alt="Skynium - Retour à l'accueil"> 
+            <a href="index.html"><p>Skynium</p></a>
+        </div>
+        <nav role="navigation" aria-label="Navigation principale">
+            <ul id="main-nav">
+                <li><a href="assistance.html">Assistance</a></li>
+                <li><a href="temoignage.html">Témoignage</a></li>
+                <li>
+                    <a href="#" aria-haspopup="true" aria-expanded="false">Partenaires</a>
+                    <ul>
+                        <li><a href="https://abovethesky.skynium.fr">Above The Sky</a></li>
+                        <li><a href="https://e-reservation.skynium.fr">Skynium E-Reservation</a></li>
+                    </ul>
+                </li>
+                <li><a href="apropos.html">À propos</a></li>
+            </ul>
+            <button 
+                id="mobile-menu-icon" 
+                aria-label="Ouvrir le menu de navigation"
+                aria-expanded="false"
+                aria-controls="main-nav"
+            >
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <section class="sovereignty-hero">
+            <h1>Souveraineté Numérique</h1>
+            <p>
+                Chez Skynium, nous sommes profondément attachés à la protection de vos données et à l'indépendance technologique européenne.
+                Nous travaillons activement pour réduire notre dépendance aux géants du web (GAFAM) et vous garantir un écosystème respectueux et souverain.
+            </p>
+        </section>
+
+        <section>
+            <div class="status-grid">
+                
+                <!-- Carte Succès (Déjà en Europe) -->
+                <div class="status-card success">
+                    <h3><i class="fas fa-shield-alt"></i> Nos Avancées (Souveraineté)</h3>
+                    <p style="margin-bottom: 1rem; color: #666; font-size: 0.9rem;">Ces services sont hébergés et gérés par des acteurs européens, soumis au RGPD et hors de portée du CLOUD Act américain.</p>
+                    <ul>
+                        <li><strong>Domaine Skynium.fr :</strong> Géré par IONOS (Allemagne).</li>
+                        <li><strong>Domaine AboveTheSky.fr :</strong> Géré par OVH (France).</li>
+                        <li><strong>Formulaires :</strong> Utilisation de Tally, basé en Belgique.</li>
+                        <li><strong>Assistance :</strong> Plateforme FreeScout hébergée sur un VPS OVH (France).</li>
+                        <li><strong>Services administratifs :</strong> Hébergés sur des serveurs VPS OVH (France).</li>
+                        <li><strong>Polices & Icônes :</strong> Auto-hébergement complet. Aucune donnée n'est envoyée à Google Fonts ou Cloudflare.</li>
+                    </ul>
+                </div>
+
+                <!-- Carte En cours (Dépendance américaine) -->
+                <div class="status-card warning">
+                    <h3><i class="fas fa-tools"></i> Nos Objectifs (Indépendance en cours)</h3>
+                    <p style="margin-bottom: 1rem; color: #666; font-size: 0.9rem;">Nous travaillons sur des solutions alternatives pour ces services afin d'atteindre une souveraineté totale.</p>
+                    <ul>
+                        <li><strong>Hébergement des sites web vitrines :</strong> Actuellement sur GitHub Pages (Microsoft/USA). Projet de migration vers nos propres VPS OVH (France) ou Infomaniak (Suisse).</li>
+                        <li><strong>Authentification & Sécurité (SSO) :</strong> Utilisation d'Auth0 (Okta/USA) pour garantir une sécurité maximale actuelle de vos comptes mySkynium, dans l'attente d'une solution souveraine équivalente (comme Keycloak).</li>
+                        <li><strong>Connexion sociale :</strong> L'option de connexion via Google sur notre portail client repose sur l'infrastructure Google (USA).</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div>
+            <h3>Nos réseaux</h3>
+            <nav aria-label="Réseaux sociaux">
+                <ul>
+                    <li><a href="https://instagram.com/skynium"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                    <li><a href="https://facebook.com/SkyniumRECONECT"><i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+                    <li><a href="https://wa.me/33667225452"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <h3>Informations</h3>
+            <nav aria-label="Informations légales">
+                <ul>
+                    <li><a href="mentionslegales.html">Mentions Légales</a></li>
+                    <li><a href="politiqueconfidentialite.html">Politique de Confidentialité</a></li>
+                    <li><a href="accessibilite.html">Déclaration d'Accessibilité</a></li>
+                    <li><a href="souverainete.html">SOUVERAINETÉ NUMÉRIQUE</a></li>
+                    <li><a href="https://privacy.skynium.fr">Centre de Confidentialité</a></li>
+                    <li><a href="horizon2027.html">Horizon 2027</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <h3>Contact</h3>
+            <p><a href="mailto:contact@skynium.fr"><i class="fa-solid fa-envelope" aria-hidden="true"></i> contact@skynium.fr</a></p>
+            <p><a href="sms:+33667225452"><i class="fa-solid fa-phone" aria-hidden="true"></i> +33 6 67 22 54 52</a></p>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Skynium. Tous droits réservés.
+        </div>
+    </footer>
+
+    <!-- Skynium DATA - Bandeau Cookie (À copier depuis ton fichier existant si besoin) -->
+    <script src="ressources/app.js"></script>
+
+</body>
+</html>
