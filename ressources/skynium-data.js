@@ -129,7 +129,7 @@
         `;
         document.head.appendChild(style);
 
-        // Injection du HTML (Texte mis à jour selon tes mentions légales)
+        // Injection du HTML
         const bannerHTML = `
             <div id="sk-data-banner" role="dialog" aria-labelledby="sk-cookie-title" aria-describedby="sk-cookie-desc">
                 <div class="sk-data-container">
@@ -145,9 +145,7 @@
                         </p>
                     </div>
                     <div class="sk-data-buttons">
-                        <!-- CNIL : Le bouton refus doit être aussi lisible que l'acceptation -->
                         <button id="sk-data-refuse" class="sk-btn sk-btn-refuse">Continuer sans accepter</button>
-                        <!-- Lien vers le centre de confidentialité -->
                         <a href="https://privacy.skynium.fr" class="sk-btn sk-btn-manage">Gérer mes choix</a>
                         <button id="sk-data-accept" class="sk-btn sk-btn-accept">Tout accepter</button>
                     </div>
@@ -169,11 +167,32 @@
         });
     }
 
-    // 5. Fonction qui charge les scripts non-obligatoires (Seulement si accepté)
+    // 5. Fonction qui charge MATOMO (Seulement si accepté)
     function triggerTrackingScripts() {
-        console.log("✅ [Skynium DATA] Consentement actif. Les scripts optionnels sont chargés.");
-        // Les outils obligatoires (Tally, FreeScout) fonctionnent déjà sans ce script.
-        // C'est ici que tu mettras les futurs scripts analytiques (ex: Google Analytics) si tu en ajoutes.
+        console.log("✅ [Skynium DATA] Consentement actif. Chargement de Matomo Analytics.");
+        
+        // Sécurité Anti-Doublon (Empêche de charger 2 fois Matomo si on clique plusieurs fois)
+        if (window._paq && window._paq.length > 0) return;
+
+        // Ton code d'intégration Matomo traduit en JS pur (sans les balises HTML <script>)
+        var _paq = window._paq = window._paq || [];
+        _paq.push(["setCookieDomain", "*.skynium.fr"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        
+        (function() {
+            var u="//analytics.iris.skynium.fr/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '2']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; 
+            g.src=u+'matomo.js'; 
+            if(s && s.parentNode) {
+                s.parentNode.insertBefore(g,s);
+            } else {
+                document.head.appendChild(g); // Fallback de sécurité
+            }
+        })();
     }
 
 })();
