@@ -43,11 +43,6 @@
     </header>
 
     <main class="legal-page">
-        <div style="text-align: center;">
-            <h1>Politique de Confidentialité</h1>
-        </div>
-
-        <section>
             <h1>Politique de Confidentialité RGPD – Skynium & Above The Sky Events</h1>
 
             <h2>1. Notre engagement fondamental</h2>
@@ -61,60 +56,64 @@
             <strong>Statut</strong> : Entreprise Individuelle (EI)<br>
             <strong>SIRET</strong> : 98964292100021<br>
             <strong>Adresse</strong> : 8 Rue de la République, Bureau 3, 13001 Marseille, France<br>
-            <strong>Email</strong> : <a href="mailto:contact@skynium.fr">contact@skynium.fr</a><br>
-            <strong>Site</strong> : <a href="https://www.skynium.fr" target="_blank">https://www.skynium.fr</a> / <a href="https://abovetheskyproductions.skynium.fr/" target="_blank">https://abovetheskyproductions.skynium.fr/</a></p>
+            <strong>Email principal</strong> : <a href="mailto:contact@skynium.fr">contact@skynium.fr</a><br>
+            <strong>Email dédié RGPD</strong> : <a href="mailto:rgpd@groupe-skynium.fr">rgpd@groupe-skynium.fr</a><br>
+            <strong>Sites web</strong> : <a href="https://www.skynium.fr" target="_blank">https://www.skynium.fr</a> / <a href="https://abovethesky.skynium.fr/" target="_blank">https://abovethesky.skynium.fr/</a></p>
 
             <h2>3. Finalité du traitement</h2>
-            <p>Nous collectons vos données <strong>uniquement pour vous servir</strong> — pas pour vous vendre, vous profiler ou vous manipuler.</p>
-            <p><strong>Pour les participants à un événement (Skynium Events / Above The Sky Events)</strong> :</p>
+            <p>Nous collectons vos données <strong>uniquement pour vous servir</strong> — pas pour vous vendre, vous profiler ou vous manipuler. 
+            <strong>Aucune revente, aucune statistique cachée, aucune publicité.</strong></p>
+            
+            <p><strong>Finalités principales :</strong></p>
             <ul>
-                <li>Gestion de votre commande (billet, ticket, confirmation)</li>
-                <li>Communication liée à l’événement (informations pratiques, changements, rappels)</li>
-                <li>Sécurité et accès à l’événement (liste des participants, contrôle d’accès)</li>
-                <li>Facturation (si applicable)</li>
-            </ul>
-            <p><strong>Pour les organisateurs / groupes / partenaires</strong> :</p>
-            <ul>
-                <li>Gestion du contrat ou de la collaboration</li>
-                <li>Facturation et suivi administratif</li>
-                <li>Communication liée à l’organisation de l’événement</li>
+                <li>Gestion de vos commandes et réservations d'événements (billets, tickets, confirmations).</li>
+                <li>Assistance et support technique (réponse à vos requêtes, suivi des dossiers).</li>
+                <li>Communication liée à un événement (informations pratiques, changements, rappels).</li>
+                <li>Sécurité et accès aux événements (liste des participants, contrôle d’accès).</li>
+                <li>Facturation et gestion de votre espace client.</li>
             </ul>
 
-            <h2>4. Données collectées</h2>
+            <h2>4. Outils utilisés et Données collectées</h2>
+            <p>Afin de vous fournir ces services de manière sécurisée et indépendante, Skynium opère sa propre infrastructure. Voici la liste transparente des outils utilisés et des données qu'ils requièrent :</p>
 
-            <h3>Pour les participants :</h3>
+            <h3>Écosystème Skynium IRIS (Hébergé sur VPS OVH)</h3>
             <ul>
-                <li>Nom, prénom</li>
-                <li>Sexe (facultatif)</li>
-                <li>Email</li>
-                <li>Téléphone (facultatif)</li>
-                <li>Adresse postale (si facturation ou envoi physique requis)</li>
-                <li>Données de paiement (traitées par Pretix — <strong>non stockées</strong>)</li>
-                <li>Informations de connexion à l’événement (ticket, QR code)</li>
+                <li><strong>FreeScout (Support Client & Chat) :</strong> Prénom, Nom, Mail, Numéro de téléphone, Sexe, historique des tickets d'assistance. <em>(Les emails transactionnels de support sont routés via Brevo).</em></li>
+                <li><strong>Invoice Ninja (Facturation & Gestion Client) :</strong> Prénom, Nom, Adresse Postale, Mail, Numéro de téléphone, Sexe, numéro de TVA (pour les pros), historique financier.</li>
+                <li><strong>Tally (Formulaires de contact) :</strong> Nom, Prénom, Mail, Numéro de téléphone, Motif d'assistance, Pays (basé sur IP). <a href="https://tally.so/help/privacy-policy" target="_blank">Politique de confidentialité de Tally</a>.</li>
+                <li><strong>Pretix (Billetterie Skynium Events) :</strong> Nom, Prénom, Mail, Numéro de téléphone, Sexe, Adresse postale, Données bancaires (non stockées en clair), IP de session, Pays (basé sur IP).</li>
             </ul>
 
-            <h3>Pour les organisateurs :</h3>
+            <h3>Écosystème Skynium ASTRA (Hébergé sur VPS OVH)</h3>
             <ul>
-                <li>Nom du groupe / structure</li>
-                <li>Nom et prénom du représentant</li>
-                <li>Adresse postale</li>
-                <li>Email et téléphone</li>
-                <li>Informations bancaires (si facturation)</li>
-                <li>Description de l’activité / projet</li>
+                <li><strong>RuBY / Moodle (Plateforme étudiante) :</strong> Prénom, Nom, Mail, Pays, Mot de passe (chiffré).</li>
+            </ul>
+
+            <h3>Écosystème Skynium ETNA (Administration Interne - Hébergé sur GitHub)</h3>
+            <ul>
+                <li><strong>Auth0 (Authentification sécurisée) :</strong> Mail, Mot de passe (chiffré), Clé de sécurité, Double authentification (A2F), données de SSO. <a href="https://www.okta.com/legal/privacy-policy/" target="_blank">Politique de confidentialité d'Okta/Auth0</a>.</li>
+            </ul>
+
+            <h3>Matomo Analytics (Statistiques Souveraines)</h3>
+            <ul>
+                <li><strong>Si et seulement si vous l'acceptez expressément :</strong> Nous utilisons Matomo (hébergé sur notre VPS) pour comprendre la navigation (IP anonymisée, navigateur, pages vues, pays). Ces données ne quittent pas notre serveur.</li>
             </ul>
 
             <h2>5. Base légale du traitement</h2>
             <ul>
-                <li><strong>Exécution d’un contrat</strong> (achat de billet, partenariat)</li>
-                <li><strong>Consentement explicite</strong> donné via ce formulaire</li>
-                <li><strong>Intérêt légitime</strong> pour la gestion de l’événement et la sécurité</li>
+                <li><strong>Exécution d’un contrat</strong> (achat de billet, prestation d'assistance, facturation).</li>
+                <li><strong>Obligation légale</strong> (conservation des factures pour la comptabilité).</li>
+                <li><strong>Consentement explicite</strong> (pour les cookies statistiques ou l'inscription volontaire).</li>
+                <li><strong>Intérêt légitime</strong> (pour la gestion de l’événement et la sécurité des systèmes).</li>
             </ul>
 
             <h2>6. Durée de conservation</h2>
+            <p>Nous appliquons une politique stricte d'effacement selon la nature des données :</p>
             <ul>
-                <li><strong>3 ans</strong> après la fin de l’événement (obligation légale)</li>
-                <li><strong>5 ans</strong> pour les données des organisateurs (facturation)</li>
-                <li><strong>Suppression immédiate</strong> sur demande (droit à l’effacement)</li>
+                <li><strong>Factures et données comptables :</strong> 10 ans (Obligation légale stricte).</li>
+                <li><strong>Données d'assistance (FreeScout, Tally) :</strong> 3 ans après la clôture de la demande.</li>
+                <li><strong>Données liées à un événement (Pretix) :</strong> Supprimées à la fin de la durée de l'événement (sauf si le client a créé un compte permanent, conservé 3 ans).</li>
+                <li><strong>Suppression immédiate :</strong> Sur simple demande de votre part (droit à l’effacement).</li>
             </ul>
 
             <h2>7. Vos droits (RGPD)</h2>
@@ -122,65 +121,56 @@
             <ul>
                 <li><strong>Droit d’accès</strong> → Obtenir une copie de vos données</li>
                 <li><strong>Droit de rectification</strong> → Corriger vos informations</li>
-                <li><strong>Droit d’effacement</strong> → Demander la suppression</li>
+                <li><strong>Droit d’effacement</strong> → Demander la suppression de vos données</li>
                 <li><strong>Droit à la limitation</strong> → Limiter le traitement</li>
                 <li><strong>Droit à la portabilité</strong> → Récupérer vos données</li>
-                <li><strong>Droit d’opposition</strong> → Vous opposer au traitement (ex. : newsletter)</li>
+                <li><strong>Droit d’opposition</strong> → Vous opposer au traitement</li>
             </ul>
-            <p>✉️ Pour exercer ces droits : <a href="mailto:contact@skynium.fr">contact@skynium.fr</a></p>
+            <p>✉️ Pour exercer ces droits, une seule adresse : <strong><a href="mailto:rgpd@groupe-skynium.fr">rgpd@groupe-skynium.fr</a></strong></p>
 
             <h2>8. Destinataires des données</h2>
             <p>Vos données sont accessibles <strong>uniquement par</strong> :</p>
             <ul>
-                <li><strong>Jonathan Balbas</strong> (responsable)</li>
-                <li><strong>L’équipe technique Skynium</strong> (accès restreint via ETNA/IRIS)</li>
-                <li><strong>Pretix</strong> (hébergeur de la billetterie — sous contrat RGPD)</li>
-                <li><strong>Éventuels prestataires</strong> (sécurité, logistique, communication) — sous contrat RGPD</li>
+                <li><strong>Jonathan Balbas</strong> (responsable unique de Skynium).</li>
+                <li><strong>Nos fournisseurs d'infrastructure (Hébergeurs) :</strong> OVH (France), IONOS (France), Infomaniak (Suisse) et GitHub.</li>
+                <li><strong>Brevo :</strong> Utilisé uniquement comme relais technique pour l'envoi de nos emails de support.</li>
             </ul>
-            <p>❌ <strong>Aucune donnée n’est vendue, ni transmise à des tiers à des fins commerciales.</strong></p>
+            <p>❌ <strong>Aucune donnée n’est vendue, ni transmise à des partenaires à des fins commerciales.</strong></p>
 
             <h2>9. Transferts internationaux</h2>
-            <p>Les données sont stockées dans l’UE (Pretix, IONOS). Aucun transfert vers des pays tiers non conformes au RGPD.</p>
+            <p><strong>Aucune donnée ne quitte l'Union Européenne ou la Suisse.</strong> Les données sont stockées sur des serveurs européens (OVH, IONOS) ou suisses (Infomaniak), garantissant une souveraineté juridique totale.</p>
 
-            <h2>10. Sécurité</h2>
-            <p>Nous appliquons le <strong>dogme du Strict Minimum</strong> :</p>
+            <h2>10. Sécurité de pointe</h2>
+            <p><em>« La sécurité a un coût exorbitant. La plupart des entreprises font payer ce coût par votre vie privée. Chez Skynium, nous absorbons ce coût. »</em> — YOU.SKYNIUM</p>
+            <p>Nous appliquons des mesures techniques rigoureuses :</p>
             <ul>
-                <li>→ Nous ne collectons que l’atome indispensable.</li>
-                <li>→ Nous ne stockons que ce qui est nécessaire.</li>
-                <li>→ Nous effaçons dès que possible.</li>
-                <li>→ Nous ne gardons rien “au cas où”.</li>
+                <li>Sites web et formulaires sécurisés par certificat <strong>SSL (HTTPS)</strong>.</li>
+                <li>Chiffrement systématique des données <strong>au repos et lors du transfert</strong>.</li>
+                <li>Les données internes (Pretix, FreeScout, Invoice Ninja) transitent uniquement via un réseau privé virtuel sécurisé (<strong>VPN Skynium</strong>).</li>
+                <li>Sauvegardes chiffrées régulières pour prévenir toute perte de données.</li>
             </ul>
-            <p><em>« La donnée est toxique par nature. Plus on la garde, plus elle devient dangereuse. Alors, nous nettoyons. »</em> — YOU.SKYNIUM</p>
 
             <h2>11. Cookies & traqueurs</h2>
             <p><em>« Zéro pub, zéro vente, zéro compromis. »</em> — YOU.SKYNIUM</p>
-            <p>Nous n’utilisons <strong>aucun cookie de suivi</strong>, <strong>aucun traceur publicitaire</strong>, <strong>aucun pixel de tracking</strong>, <strong>aucun outil d’analyse comportementale</strong> (Google Analytics, Facebook Pixel, etc.).</p>
-            <p>Notre site et nos plateformes (<strong>Skynium Events</strong>, <strong>Above The Sky Events</strong>) fonctionnent <strong>sans publicité, sans surveillance, sans profilage</strong>.</p>
-            <p>Les seuls cookies utilisés sont <strong>strictement techniques</strong> :</p>
+            <p>Notre site fonctionne <strong>sans publicité, sans surveillance globale et sans profilage</strong>. Nous n’utilisons aucun outil d’analyse comportementale intrusif (Google Analytics, Facebook Pixel, etc.).</p>
+            <p>Les seuls cookies utilisés se divisent en deux catégories :</p>
             <ul>
-                <li>Pour la gestion de la session (connexion à Pretix, accès à ETNA)</li>
-                <li>Pour le fonctionnement du panier ou du formulaire de billetterie</li>
-                <li>Pour la sécurité (protection contre les attaques)</li>
+                <li><strong>Cookies strictement techniques (Obligatoires) :</strong> Pour la gestion de la session, le fonctionnement du panier, la sécurité et la mémorisation de vos choix de confidentialité.</li>
+                <li><strong>Cookies de statistiques souveraines (Optionnels) :</strong> Gérés par notre outil interne <em>Matomo</em>, uniquement activés si vous cliquez sur "Tout accepter".</li>
             </ul>
-            <p><strong>Aucun cookie n’est utilisé pour vous identifier, vous profiler, vous cibler ou vous suivre sur d’autres sites.</strong></p>
 
             <h2>12. Vos choix : Consentement & révocation</h2>
-            <p>✅ En cochant cette case, vous <strong>acceptez expressément</strong> que vos données soient collectées, traitées et conservées conformément à cette politique.</p>
-            <p><em>Je consens au traitement de mes données personnelles par Skynium Events / Above The Sky Events, dans les conditions décrites ci-dessus.</em></p>
-            <p>Vous pouvez <strong>retirer votre consentement à tout moment</strong>, sans effet rétroactif, en nous contactant à :<br>
-            📧 <a href="mailto:contact@skynium.fr">contact@skynium.fr</a></p>
+            <p>Vous pouvez <strong>gérer, modifier ou retirer votre consentement à tout moment</strong>, sans effet rétroactif, en vous rendant sur notre plateforme dédiée : <a href="https://privacy.skynium.fr" target="_blank">privacy.skynium.fr</a>, ou en nous contactant à <a href="mailto:rgpd@groupe-skynium.fr">rgpd@groupe-skynium.fr</a>.</p>
 
             <h2>13. Notre philosophie : Le dogme du Strict Minimum</h2>
             <p><em>« Nous ne collectons que l’atome indispensable. Rien de plus. Pas un gramme de gras numérique. »</em> — YOU.SKYNIUM</p>
             <p>Nous ne demandons <strong>aucune donnée superflue</strong> :</p>
             <ul>
-                <li>Pas de date de naissance</li>
-                <li>Pas de genre (sauf si volontairement fourni)</li>
-                <li>Pas de situation familiale</li>
-                <li>Pas de liste d’amis, de centres d’intérêt, de comportements en ligne</li>
+                <li>Pas de date de naissance.</li>
+                <li>Pas de situation familiale.</li>
+                <li>Pas de liste d’amis, de centres d’intérêt, de comportements en ligne.</li>
             </ul>
-            <p>Nous ne stockons <strong>aucune donnée après son utilité immédiate</strong>.<br>
-            Si nous n’en avons plus besoin pour vous servir, nous l’effaçons. <strong>Définitivement.</strong></p>
+            <p>Nous ne stockons aucune donnée après son utilité immédiate. Si nous n’en avons plus besoin pour vous servir, nous l’effaçons. <strong>Définitivement.</strong></p>
 
             <h2>14. Notre sanctuaire : Zéro pub, zéro vente, zéro compromis</h2>
             <p><em>« Ici, vous êtes chez vous. Et chez vous, on ne laisse pas entrer les démarcheurs. »</em> — YOU.SKYNIUM</p>
@@ -195,58 +185,39 @@
             <ul>
                 <li>Si vous avez un problème, vous parlerez à un <strong>humain</strong> — pas à un chatbot.</li>
                 <li>Si vous êtes perdu, nous prendrons le temps de vous expliquer — <strong>sans jugement</strong>.</li>
-                <li>Si vous êtes en colère, nous écouterons — <strong>sans vous renvoyer à un formulaire</strong>.</li>
+                <li>Si vous êtes en colère, nous écouterons — <strong>sans vous renvoyer à un formulaire sans fin</strong>.</li>
             </ul>
             <p>Chez Skynium, <strong>votre vulnérabilité n’est pas une faiblesse à exploiter — c’est une raison de vous protéger</strong>.</p>
 
-            <h2>16. Sécurité “coûte que coûte”</h2>
-            <p><em>« La sécurité a un coût exorbitant. La plupart des entreprises font payer ce coût par votre vie privée. Chez Skynium, nous absorbons ce coût. »</em> — YOU.SKYNIUM</p>
-            <p>Nous hébergeons vos données sur <strong>IONOS (France)</strong> et <strong>Infomaniak (Suisse)</strong>, pour garantir :</p>
-            <ul>
-                <li>Une souveraineté juridique européenne</li>
-                <li>Une protection renforcée par la loi suisse</li>
-                <li>Une infrastructure écologique (énergies renouvelables, valorisation de la chaleur)</li>
-            </ul>
-            <p>Nous préférons <strong>payer plus cher</strong> pour un hébergeur éthique, plutôt que de compromettre votre sécurité.</p>
-
-            <h2>17. Transparence radicale</h2>
+            <h2>16. Transparence radicale</h2>
             <p><em>« Nous ne nous cachons pas derrière des mots complexes. Nous appelons un chat un chat. »</em> — YOU.SKYNIUM</p>
-            <p>Notre politique de confidentialité est rédigée en <strong>français clair</strong>, <strong>sans jargon</strong>, <strong>sans astérisques</strong>.</p>
-            <p>Si quelque chose n’est pas compréhensible, c’est que nous l’avons mal expliqué — et nous recommencerons.</p>
-            <p>Nous vous dirons la vérité, même quand elle fait mal :</p>
+            <p>Notre politique de confidentialité est rédigée en français clair, sans jargon, sans astérisques. Nous vous dirons la vérité, même quand elle fait mal :</p>
             <ul>
-                <li>Si nous faisons une erreur → nous l’admettrons</li>
-                <li>Si nous subissons une panne → nous vous le dirons</li>
-                <li>Si nous changeons nos pratiques → nous vous en informerons</li>
+                <li>Si nous faisons une erreur → nous l’admettrons.</li>
+                <li>Si nous subissons une panne ou une faille → nous vous le dirons.</li>
+                <li>Si nous changeons nos pratiques → nous vous en informerons.</li>
             </ul>
 
-            <h2>18. Le Serment Skynium</h2>
+            <h2>17. Le Serment Skynium</h2>
             <p><em>« Vous êtes la priorité absolue. »</em> — YOU.SKYNIUM</p>
             <p>Nous jurons :</p>
             <ul>
-                <li>De ne jamais vous vendre — ni vos données, ni votre attention</li>
-                <li>De ne jamais vous trahir — ni par omission, ni par silence</li>
-                <li>De vous écouter — toujours, même quand c’est long</li>
-                <li>De vous protéger — même si cela coûte plus cher</li>
-                <li>De vous laisser tranquille — sans publicité, sans tracking, sans manipulation</li>
+                <li>De ne jamais vous vendre — ni vos données, ni votre attention.</li>
+                <li>De ne jamais vous trahir — ni par omission, ni par silence.</li>
+                <li>De vous écouter — toujours, même quand c’est long.</li>
+                <li>De vous protéger — même si cela coûte plus cher.</li>
+                <li>De vous laisser tranquille — sans tracking caché, sans manipulation.</li>
             </ul>
 
-            <h2>19. Contact RGPD</h2>
+            <h2>18. Contact RGPD & Mise à jour</h2>
             <p>Pour toute question, demande d’accès, rectification, effacement ou opposition :</p>
             <ul>
-                <li>📧 <a href="mailto:contact@skynium.fr">contact@skynium.fr</a></li>
-                <li>📍 8 Rue de la République, Bureau 3, 13001 Marseille, France</li>
-                <li>📅 Réponse sous 15 jours ouvrés</li>
+                <li>📧 Email dédié : <strong><a href="mailto:rgpd@groupe-skynium.fr">rgpd@groupe-skynium.fr</a></strong></li>
+                <li>📍 Courrier : Jonathan Balbas, 8 Rue de la République, Bureau 3, 13001 Marseille, France</li>
+                <li>📅 Délai : Réponse garantie sous 15 jours ouvrés.</li>
             </ul>
-
-            <h2>20. Mise à jour</h2>
-            <p>Cette politique de confidentialité peut être mise à jour à tout moment.</p>
-            <p>Nous vous informerons de tout changement majeur via notre site web ou par email.</p>
-            <p><strong>✅ Date de dernière mise à jour</strong> : 28 janvier 2026</p>
-
-        </section>
-
-    </main>
+            <p style="margin-top: 2rem;"><strong>✅ Date de dernière mise à jour</strong> : 28 janvier 2026</p>
+        </main>
 
     <footer role="contentinfo">
         <div>
