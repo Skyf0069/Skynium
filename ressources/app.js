@@ -59,3 +59,22 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
 });
+
+// --- CHARGEMENT DYNAMIQUE DU FOOTER ---
+document.addEventListener('DOMContentLoaded', () => {
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+    
+    if (footerPlaceholder) {
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Erreur de chargement du footer');
+                return response.text();
+            })
+            .then(data => {
+                footerPlaceholder.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Skynium Error:', error);
+            });
+    }
+});
